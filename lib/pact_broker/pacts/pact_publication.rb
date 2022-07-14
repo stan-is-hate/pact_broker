@@ -153,7 +153,7 @@ module PactBroker
           pact_version_sha: pact_version.sha,
           created_at: created_at,
           db_model: self
-          )
+        )
       end
 
       # Think we really could just use the version here.
