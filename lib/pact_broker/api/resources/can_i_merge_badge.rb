@@ -15,6 +15,7 @@ module PactBroker
             # when there is no main branch version, we return an error badge url
             badge_service.error_badge_url("main branch version", "not found")
           else
+            set_cache_control("max-age=30") # override the cache control header to a default 30 seconds
             # we call badge_service to build the badge url
             badge_service.can_i_merge_badge_url(deployable: results)
           end
